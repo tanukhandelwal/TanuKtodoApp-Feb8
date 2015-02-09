@@ -13,6 +13,8 @@
 		5977310E1A85E24300F33F55 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5977310D1A85E24300F33F55 /* Images.xcassets */; };
 		597731111A85E24300F33F55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5977310F1A85E24300F33F55 /* Main.storyboard */; };
 		5977311D1A85E24300F33F55 /* tanuKTodoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5977311C1A85E24300F33F55 /* tanuKTodoTests.m */; };
+		597731281A85E2F600F33F55 /* TodoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 597731271A85E2F600F33F55 /* TodoItem.m */; };
+		5977312B1A85E31000F33F55 /* TodoList.m in Sources */ = {isa = PBXBuildFile; fileRef = 5977312A1A85E31000F33F55 /* TodoList.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,10 @@
 		597731161A85E24300F33F55 /* tanuKTodoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tanuKTodoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5977311B1A85E24300F33F55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5977311C1A85E24300F33F55 /* tanuKTodoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tanuKTodoTests.m; sourceTree = "<group>"; };
+		597731261A85E2F600F33F55 /* TodoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoItem.h; sourceTree = "<group>"; };
+		597731271A85E2F600F33F55 /* TodoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoItem.m; sourceTree = "<group>"; };
+		597731291A85E31000F33F55 /* TodoList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoList.h; sourceTree = "<group>"; };
+		5977312A1A85E31000F33F55 /* TodoList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoList.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,10 @@
 				5977310B1A85E24300F33F55 /* ViewController.m */,
 				5977310D1A85E24300F33F55 /* Images.xcassets */,
 				5977310F1A85E24300F33F55 /* Main.storyboard */,
+				597731261A85E2F600F33F55 /* TodoItem.h */,
+				597731271A85E2F600F33F55 /* TodoItem.m */,
+				597731291A85E31000F33F55 /* TodoList.h */,
+				5977312A1A85E31000F33F55 /* TodoList.m */,
 				597731031A85E24300F33F55 /* Supporting Files */,
 			);
 			path = tanuKTodo;
@@ -217,7 +227,9 @@
 			files = (
 				5977310C1A85E24300F33F55 /* ViewController.m in Sources */,
 				597731091A85E24300F33F55 /* main.m in Sources */,
+				597731281A85E2F600F33F55 /* TodoItem.m in Sources */,
 				597731071A85E24300F33F55 /* AppDelegate.m in Sources */,
+				5977312B1A85E31000F33F55 /* TodoList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

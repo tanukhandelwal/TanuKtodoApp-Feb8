@@ -8,7 +8,23 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ViewController : NSViewController
+
+@class TodoItem;
+@class TodoList;
+
+
+
+@interface ViewController : NSViewController <NSTableViewDataSource,NSTableViewDelegate>
+
+@property (weak) IBOutlet NSTextField *inputItem;
+@property (weak) IBOutlet NSButton *addItems;
+@property (weak) IBOutlet NSButton *removeItems;
+@property (weak) IBOutlet NSButton *allowDuplicates;
+
+@property (weak) IBOutlet NSTableView *tableView;
+@property NSMutableArray *items;
+@property(strong, nonatomic)TodoItem *todoItem;
+@property(weak, nonatomic)TodoList *todoList;
 
 
 @end
