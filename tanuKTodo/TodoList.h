@@ -8,9 +8,31 @@
 
 #import <Foundation/Foundation.h>
 
+
+@class TodoList;
+@class TodoItem;
+
 @interface TodoList : NSObject
+
+// DataStructures
 -(NSMutableArray*)allTitles;
 -(NSArray*)allItems;
+
+
+@property (assign) BOOL allowsDuplicates;
+@property (copy, nonatomic) NSString *title;
+
+//Utility Methods
+-(BOOL)canAddItemsWithTitle:(NSString*)title;
+-(BOOL)canRemoveItemsWithTitle:(NSString*)title;
+-(void)addItem:(TodoItem*)todoItem;
+-(BOOL)hasItemWithTitle:(NSString*)title;
+
+-(void)addItemWithTitle:(NSString*)title;
+
+
+
+
 
 
 @end

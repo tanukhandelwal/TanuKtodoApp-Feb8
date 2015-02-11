@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface TodoItem : NSObject
-@property(weak,readwrite)NSString *title;
-@property(weak, readwrite)NSString *content;
+@property(strong,readwrite)NSString *title;
+@property(strong, readwrite)NSString *content;
 -(id)initWithTitle:(NSString*)title;
 
 

@@ -22,7 +22,7 @@
     return self;
 }
 
--(instancetype)int
+-(instancetype)init
 {
     return [self initWithTitle:@""];
 }

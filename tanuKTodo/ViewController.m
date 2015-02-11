@@ -7,8 +7,8 @@
 //
 
 #import "ViewController.h"
-#import "TodoList.m"
-#import "TodoItem.m"
+#import "TodoList.h"
+#import "TodoItem.h"
 
 
 
@@ -21,30 +21,38 @@
     self.tableView.delegate = self;
     self.tableView.dataSource=self;
     self.tableView.rowHeight = 50;
-    
-    self.items = [NSMutableArray arrayWithObjects:
-                                  @"Audi A6", @"BMW Z3",
-                                  @"Audi Quattro", @"Audi TT", nil];
+    self.todoList = [[TodoList alloc]init];
+
     }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView;
 {
-    return [self.items count];
+    NSArray *array = [self.todoList allItems];
+    return [array count];
+    
 }
 
 -(NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
     NSTableCellView *cell = [tableView makeViewWithIdentifier:@"Cell" owner:nil];
-    cell.textField.stringValue = [self.items objectAtIndex:row];
+    
+//    //Get a item in an array(arr) and get the title of the item tat you got and assign to the cell
+//    //Cell's textfield is equal to the string title
+//    
+//    NSArray *arr = [self.todoList allItems];
+//    TodoItem *myItem =   arr[row];
+//    NSString *myString = myItem.title;
+//    cell.textField.stringValue= myString;
+    
     return cell;
 }
 
 - (IBAction)addItems:(NSButton *)sender {
+    NSString *inputString = self.inputItem.stringValue;
+    [self.todoList addItemWithTitle:inputString];
+    [self.tableView reloadData];
     
-//    NSString *myString = self.inputItem.stringValue;
-//    self.todoItem = [[TodoItem alloc] initWithTitle:myString];
-//    [self.items addObject:self.todoItem];
-//                    
+ 
     
 }
 

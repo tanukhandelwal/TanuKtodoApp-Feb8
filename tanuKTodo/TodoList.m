@@ -6,33 +6,96 @@
 //  Copyright (c) 2015 UW PCE learning. All rights reserved.
 //
 
+
+
 #import "TodoList.h"
 #import "TodoItem.h"
-#import "ViewController.h"
+@interface TodoList()
+@property (strong, nonatomic)NSMutableArray* myArray;
+
+@end
 
 @implementation TodoList
 
--(NSMutableArray*)allTitles
+-(id)init
 {
-    NSMutableArray *myArray = [[NSMutableArray alloc] init];
-    TodoItem *item = [[TodoItem alloc ]initWithTitle:@"Read OC"];
-   // TodoItem *item = [[TodoItem alloc ]initWithTitle:self.];
-
-    
-    
-    [myArray addObject: item];
-    NSLog(@"%@",myArray);
-    return myArray;
+    self = [super init];
+    if (self) {        
+        self.myArray = [[NSMutableArray alloc]init];
+    }
+    return self;
     
 }
+
+-(BOOL)canRemoveItemsWithTitle:(NSString *)title
+{
+    return NO;
+}
+
+-(NSArray*)allTitles
+{
+    NSMutableArray *newArray = [[NSMutableArray alloc] init];
+    for(TodoItem *myItem in self.myArray)
+    {
+        [newArray addObject:myItem.title];
+    }
+   
+    return newArray;
+}
+
+
+
 
 -(NSArray*)allItems
 {
-    NSArray *listArray = [NSArray arrayWithObject:self.allTitles];
-    NSLog(@"%@",listArray);
-    return listArray;
+    NSArray *arr = [[NSArray alloc]initWithArray:self.myArray];
+    return arr;
     
 }
+
+-(BOOL)canAddItemsWithTitle:(NSString*)title
+{
+    if([title isEqualToString:@""])
+    {
+        return NO;
+    }
+    
+    if(self.allowsDuplicates)
+    {
+        
+        return YES;
+    }
+    //Dont allow if it has a title with the same name
+    
+    return ![self hasItemWithTitle:title];
+    
+}
+
+-(void)addItem:(TodoItem*)todoItem
+{
+    [self.myArray addObject:todoItem];
+}
+
+
+-(BOOL)hasItemWithTitle:(NSString*)title
+{
+     for(TodoItem *item in self.allItems)
+     {
+         if([item.title isEqualToString:title])
+             return YES;
+     }
+    return NO;
+}
+
+-(void)addItemWithTitle:(NSString*)title{
+    TodoItem *myItem = [[TodoItem alloc]initWithTitle:title];
+    [self.myArray addObject:myItem];
+    
+}
+
+
+
+
 
 
 

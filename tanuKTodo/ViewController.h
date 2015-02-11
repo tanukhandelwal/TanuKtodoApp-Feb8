@@ -16,15 +16,18 @@
 
 @interface ViewController : NSViewController <NSTableViewDataSource,NSTableViewDelegate>
 
-@property (weak) IBOutlet NSTextField *inputItem;
-@property (weak) IBOutlet NSButton *addItems;
-@property (weak) IBOutlet NSButton *removeItems;
-@property (weak) IBOutlet NSButton *allowDuplicates;
+@property (strong) IBOutlet NSTextField *inputItem;
+@property (strong) IBOutlet NSButton *addItems;
+@property (strong) IBOutlet NSButton *removeItems;
+@property (strong) IBOutlet NSButton *allowDuplicates;
 
-@property (weak) IBOutlet NSTableView *tableView;
-@property NSMutableArray *items;
-@property(strong, nonatomic)TodoItem *todoItem;
-@property(weak, nonatomic)TodoList *todoList;
+@property (strong) IBOutlet NSTableView *tableView;
+
+
+//Because I want View controller to be the owner of the list
+//you always a strong hold
+@property(strong, nonatomic)TodoList *todoList;
+
 
 
 @end
