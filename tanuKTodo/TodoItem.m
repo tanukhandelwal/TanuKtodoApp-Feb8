@@ -27,11 +27,10 @@
     return [self initWithTitle:@""];
 }
 
-+(instancetype)initItemWithTitle:(NSString*)title
++(instancetype)todoItemWithTitle:(NSString*)title
 {
     TodoItem *item = [[self alloc] init];
     item.title = title;
-    NSLog(@"This is initialized");
     return item;
 }
 

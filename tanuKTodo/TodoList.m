@@ -27,10 +27,7 @@
     
 }
 
--(BOOL)canRemoveItemsWithTitle:(NSString *)title
-{
-    return NO;
-}
+
 
 -(NSArray*)allTitles
 {
@@ -92,6 +89,46 @@
     [self.myArray addObject:myItem];
     
 }
+
+
+//Remove methods
+
+-(void)removeItem:(TodoItem*)todoItem
+{
+    NSUInteger index = [[self myArray] indexOfObject:todoItem.title];
+    [[self myArray] removeObjectAtIndex:index];
+                        
+}
+
+-(BOOL)canRemoveItemsWithTitle:(NSString*)title
+{
+    if ([self hasItemWithTitle:title])
+    {
+        return YES;
+    }
+    else
+        return NO;
+    
+}
+
+-(void)removeItemWithTitle:(NSString*)title
+{
+    if([self canRemoveItemsWithTitle:title])
+    {
+        [self removeItem:[TodoItem todoItemWithTitle:title]];;
+    }
+    
+        
+}
+
+-(BOOL)canRemoveItem:(TodoItem*)todoItem
+{
+    NSString *titleString = todoItem.title;
+    return [self canRemoveItemsWithTitle:titleString];
+}
+
+
+
 
 
 

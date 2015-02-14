@@ -22,13 +22,24 @@
 @property (assign) BOOL allowsDuplicates;
 @property (copy, nonatomic) NSString *title;
 
-//Utility Methods
+// Add Utility Methods
 -(BOOL)canAddItemsWithTitle:(NSString*)title;
--(BOOL)canRemoveItemsWithTitle:(NSString*)title;
 -(void)addItem:(TodoItem*)todoItem;
 -(BOOL)hasItemWithTitle:(NSString*)title;
 
 -(void)addItemWithTitle:(NSString*)title;
+
+//Remove methods
+-(void)removeItem:(TodoItem*)todoItem;
+
+-(BOOL)canRemoveItem:(TodoItem*)todoItem;
+
+
+-(BOOL)canRemoveItemsWithTitle:(NSString*)title;
+-(void)removeItemWithTitle:(NSString*)title;
+
+
+
 
 
 

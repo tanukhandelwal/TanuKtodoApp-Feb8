@@ -12,6 +12,8 @@
 @property(strong,readwrite)NSString *title;
 @property(strong, readwrite)NSString *content;
 -(id)initWithTitle:(NSString*)title;
++(instancetype)todoItemWithTitle:(NSString*)title;
+
 
 
 @end
